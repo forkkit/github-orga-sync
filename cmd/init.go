@@ -16,7 +16,7 @@ import (
 )
 
 var exampleConfig = strings.TrimSpace(`
-[github]
+[githubs]
 # Name of your GitHub organization.
 orga = "your-github-orga"
 

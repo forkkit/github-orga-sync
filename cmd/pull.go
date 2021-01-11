@@ -29,14 +29,14 @@ func pullAction(cmd *cobra.Command, args []string) {
 	parseConfig()
 
 	log.WithFields(log.Fields{
-		"organization": viper.GetString("github.orga"),
+		"organization": viper.GetString("githubs.orga"),
 		"branch":       viper.GetString("branch.pull"),
 	}).Info("Fetching repositories from GitHub..")
 
 	repos, err := git.FetchGitHubRepos(
-		viper.GetString("github.orga"),
+		viper.GetString("githubs.orga"),
 		"refs/heads/"+viper.GetString("branch.pull"),
-		viper.GetString("github.token"))
+		viper.GetString("githubs.token"))
 	if err != nil {
 		log.WithError(err).Fatal("Fetching failed")
 	}
