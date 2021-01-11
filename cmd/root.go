@@ -79,7 +79,7 @@ func parseConfig() {
 		fmt.Printf("Config key: %q -> %q (%t)\n",key, viper.Get(key), viper.IsSet(key))
 	}
 
-	for _, key := range []string{"github.orga", "github.token", "branch.pull", "branch.push"} {
+	for _, key := range []string{"githubs.orga", "githubs.token", "branch.pull", "branch.push"} {
 		if !viper.IsSet(key) {
 			errorf("Configuration key \"%s\" is missing\n", key)
 		}
